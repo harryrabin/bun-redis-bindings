@@ -75,7 +75,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: .yarn/cache
-          key: npm-cache-build-${{ matrix.settings.target }}-node@16
+          key: npm-cache-build-${{ matrix.settings.target }}-node@18
       - name: Setup toolchain
         run: ${{ matrix.settings.setup }}
         if: ${{ matrix.settings.setup }}
