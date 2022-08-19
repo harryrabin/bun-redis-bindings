@@ -6,16 +6,21 @@
 export class RedisClient {
   constructor(url: string)
   reconnect(): void
-  cmdGet(key: string): string | null
-  cmdSet(key: string, value: string): void
-  cmdLpush(key: string, value: Array<string>): void
-  cmdLpop(key: string, count: number): Array<string> | null
-  cmdHset(key: string, field: string, value: string): void
-  cmdHget(key: string, field: string): string | null
-  cmdHgetall(key: string): Record<string, string> | null
-  cmdExpire(key: string, seconds: number): void
-  cmdDel(key: string): void
-  cmdDelMultiple(keys: Array<string>): void
-  cmdKeys(pattern: string): Array<string>
-  connectionIsOpen(): boolean
+  connectionOpen(): boolean
+  get(key: string): string | Record<string, string> | null
+  expectString(args: Array<string>): string
+  expectArray(args: Array<string>): Array<string>
+  expectInteger(args: Array<string>): number
+  expectNil(args: Array<string>): void
+  cmdGET(key: string): string | null
+  cmdSET(key: string, value: string): void
+  cmdLPUSH(key: string, value: Array<string>): void
+  cmdLPOP(key: string, count: number): Array<string> | null
+  cmdHSET(key: string, field: string, value: string): void
+  cmdHGET(key: string, field: string): string | null
+  cmdHGETALL(key: string): Record<string, string> | null
+  cmdEXPIRE(key: string, seconds: number): number
+  cmdDEL(key: string | Array<string>): number
+  cmdKEYS(pattern: string): Array<string>
+  cmdTYPE(key: string): string
 }
