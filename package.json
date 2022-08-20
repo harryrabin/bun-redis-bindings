@@ -15,12 +15,7 @@
     "artifacts": "napi artifacts",
     "build": "napi build --platform --release",
     "build:debug": "napi build --platform",
-    "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
     "version": "napi version"
   },
-  "optionalDependencies": {
-    "bun-redis-bindings-darwin-arm64": "0.0.1",
-    "bun-redis-bindings-darwin-x64": "0.0.1"
-  }
 }
