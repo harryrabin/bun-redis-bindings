@@ -1,18 +1,8 @@
 {
-  "name": "@harryrabin/bun-redis-bindings",
-  "version": "0.0.1",
+  "name": "bun-redis-bindings",
+  "version": "0.0.2",
   "main": "index.js",
   "types": "index.d.ts",
-  "napi": {
-    "name": "bun-redis-bindings",
-    "triples": {
-      "defaults": false,
-      "additional": [
-        "aarch64-apple-darwin",
-        "x86_64-apple-darwin"
-      ]
-    }
-  },
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^2.11.4",
@@ -28,5 +18,9 @@
     "prepublishOnly": "napi prepublish -t npm",
     "test": "ava",
     "version": "napi version"
+  },
+  "optionalDependencies": {
+    "bun-redis-bindings-darwin-arm64": "0.0.1",
+    "bun-redis-bindings-darwin-x64": "0.0.1"
   }
 }
