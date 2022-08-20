@@ -17,5 +17,5 @@
     "build:debug": "napi build --platform",
     "test": "ava",
     "version": "napi version"
-  },
+  }
 }
